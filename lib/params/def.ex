@@ -31,6 +31,7 @@ defmodule Params.Def do
       end
 
       Module.eval_quoted(__MODULE__, quote do
+         @spec unquote(name)(map(), list()) :: Ecto.Changeset.t()
          def unquote(name)(params) do
            unquote(module_name).from(params)
          end
